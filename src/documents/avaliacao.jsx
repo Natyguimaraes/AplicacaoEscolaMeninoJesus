@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css';
+import '../css/styles.css';
 
 function Avaliacao(){
 
@@ -19,7 +19,7 @@ function Avaliacao(){
             criticaSugestao: criticaSugestao
         };
 
-        setAvaliacoesRealizadas([...avaliacoesRealizadas, novaAvaliacao]);
+        setAvaliacaoRealizadas([...avaliacaoRealizadas, novaAvaliacao]);
 
         setAvaliacao(0);
         setDataAvaliacao('');
@@ -29,22 +29,37 @@ function Avaliacao(){
           alert('Por favor, preencha os campos corretamente.');
     }
 
-        }
-
-    };
+        };
 
     return (
 
         <div className="Conteiner">
             <h1> Avaliação do Cardápio </h1>
+          
+          <div className="inputs">
+            <label> Critica e/ou Sugestão: </label>
+            <input type="text" className="sugestao" value={criticaSugestao} onChange={(e) => setCriticaSugestao(e.target.value)}/>
             <label>Avaliacao (1 a 5):</label>
-            <input type="number" value={avaliacao} min="1" max="5" onChange={(e) => setAvaliacao(parseInt(e.target.value))}/>
+            <input type="number" className="avaliacao" value={avaliacao} min="1" max="5" onChange={(e) => setAvaliacao(parseInt(e.target.value))}/>
              
             <label> Data de avaliação </label>
-            <input type="date" value={dataAvaliacao} onChange={(e) => setDataAvaliacao(e.target.value)} />
+            <input type="date" className="data" value={dataAvaliacao} onChange={(e) => setDataAvaliacao(e.target.value)} />
+</div>
+            <div className="botao">
+                <button onClick={adicionarAvaliacao}> Adicionar Avaliação </button>
+                </div>
+                <div className="container2">
+                <h2> Avaliações Realizadas </h2>
+                <ol>
+                    {avaliacaoRealizadas.map((avaliacao, index) => (
+                        <li key={index}>
+                            <b>Avaliação</b> {avaliacao.avaliacao}, <b> Data de Avaliação: </b> {avaliacao.dataAvaliacao}, <b> Crítica e/ou Sugestão</b> {avaliacao.criticaSugestao}
+                        </li>
+                    ))}
+                </ol>
+                </div>
+            </div>
+    );
+                    }
 
-            <label> Critica e/ou Sugestão: </label>
-            <input type="text" value={criticaSugestao} onChange={(e) => setCriticaSugestao(e.target.value)}/>
-            
-        </div>
-    )
+ export default Avaliacao;

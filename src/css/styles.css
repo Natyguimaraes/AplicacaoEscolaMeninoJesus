@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Schoolbell';
+    src: url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+}
+
+body {
+    background-color: rgba(135, 206, 250, 1);
+    font-family: 'Schoolbell', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 153, 1);
+    text-align: center;
+}
+
+label {
+    font-size: x-large;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+   
+}
+
+input {
+    font-size: x-large;
+}
+
+.sugestao {
+    height: 100px;
+    
+}
+
+.avaliacao,
+.data {
+    height: 50px;
+    border-radius: 20px;
+}
+
+button {
+    width: 50%;
+    height: 80px;
+    border-radius: 10px;
+    font-size: x-large;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    background-color: rgba(255, 192, 203, 1);
+    
+}
+
+button:hover {
+    border-color: rgb(216, 216, 0);;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+.botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+
+
+
+h2,
+ol li {
+    text-align: center;
+}
+
+.container2 {
+
+    background-color: rgba(144, 238, 144, 1);
+    height: 100px;
+    width: 900px;
+    margin: 0 auto;
+}
